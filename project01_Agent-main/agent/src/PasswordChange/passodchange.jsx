@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './passwordChange.css';
 
-const BACKEND_URL = "https://api.yox9.com"; // ⚠️ Replace with your actual backend URL
+const BACKEND_URL = "https://api.9xbet24.com"; // ⚠️ Replace with your actual backend URL
 
 const PasswordChange = ({ setIsLoggedIn }) => {
   const [formData, setFormData] = useState({
