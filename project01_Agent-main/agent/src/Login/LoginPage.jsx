@@ -41,7 +41,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
   return (
     <div className="login-container">
       <div className="login-header">
-        <h2>YOX9</h2>
+        <h2>9XBET</h2>
       </div>
       <div className="login-form">
       <h3>Agent Login</h3> 
