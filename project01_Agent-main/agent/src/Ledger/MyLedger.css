@@ -1,0 +1,502 @@
+.ledger-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+ 
+.ledger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8bbab0;
+  padding: 15px 30px;
+  color: white;
+}
+
+.ledger-title {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.back-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.balance-summary {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 30px;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.top-balance-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.bottom-balance-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lena-balance {
+  color: #4caf50;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.dena-balance {
+  color: #f44336;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.total-balance {
+  color: #f44336;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ledger-table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  table-layout: fixed;
+}
+
+.table-header {
+  display: flex;
+  background-color: #8bbab0;
+  color: white;
+  font-weight: 500;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.header-cell {
+  padding: 10px 15px;
+  text-align: left;
+  border-right: 1px solid #77a79d;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  width: 10%;
+}
+
+.collection {
+  width: 15%;
+}
+
+.event {
+  width: 15%;
+}
+
+.debit, .credit, .balance {
+  width: 10%;
+  text-align: center;
+  justify-content: center;
+}
+
+.payment {
+  width: 12%;
+}
+
+.remark {
+  width: 18%;
+  border-right: none;
+}
+
+/* Table body and rows */
+.table-body {
+  background-color: white;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.table-row {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  height: 42px;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.cell {
+  padding: 10px 8px;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.cell.date {
+  width: 10%;
+}
+
+.cell.collection {
+  width: 15%;
+}
+
+.cell.event {
+  width: 15%;
+}
+
+.cell.debit, .cell.credit, .cell.balance {
+  width: 10%;
+  justify-content: center;
+}
+
+.cell.debit {
+  color: #4caf50;
+}
+
+.cell.credit {
+  color: #f44336;
+}
+
+.cell.payment {
+  width: 12%;
+}
+
+.cell.remark {
+  width: 22%;
+  border-right: none;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px 20px;
+  gap: 10px;
+  background-color: #fff;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: 1px solid #8bbab0;
+  background-color: #f5fafa;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.pagination span {
+  font-size: 14px;
+}
+
+.no-data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: white;
+  min-height: 200px;
+  width: 100%;
+}
+
+.no-data-icon {
+  margin-bottom: 10px;
+}
+
+.no-data-icon svg {
+  width: 60px;
+  height: 60px;
+  opacity: 0.5;
+}
+
+.no-data-text {
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  .ledger-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ledger-header {
+    padding: 12px 15px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  
+  .ledger-title {
+    font-size: 18px;
+  }
+  
+  .back-button {
+    padding: 6px 12px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  
+  .balance-summary {
+    padding: 12px 15px;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  
+  .top-balance-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .bottom-balance-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  .lena-balance, .dena-balance, .total-balance {
+    font-size: 16px;
+  }
+  
+  /* Fixed table layout for mobile - no scrolling */
+  .ledger-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: table !important;
+    table-layout: fixed !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .table-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap;
+    box-sizing: border-box !important;
+  }
+
+  .table-body {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .table-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap;
+    box-sizing: border-box !important;
+  }
+
+  .header-cell,
+  .cell {
+    padding: 8px 4px !important;
+    font-size: 0.7rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Adjust column widths for mobile */
+  .date, .cell.date {
+    width: 12% !important;
+    min-width: 15% !important;
+  }
+
+  .collection, .cell.collection {
+    width: 18% !important;
+    min-width: 14% !important;
+  }
+
+  .event, .cell.event {
+    width: 15% !important;
+    min-width: 15% !important;
+  }
+
+  .debit, .credit, .balance,
+  .cell.debit, .cell.credit, .cell.balance {
+    width: 12% !important;
+    min-width: 12% !important;
+  }
+
+  .payment, .cell.payment {
+    width: 13% !important;
+    min-width: 13% !important;
+  }
+
+  .remark, .cell.remark {
+    width: 18% !important;
+    min-width: 36% !important;
+  }
+}
+
+/* Small Mobile Screens */
+@media screen and (max-width: 480px) {
+  .ledger-container {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .ledger-header {
+    padding: 10px 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .ledger-title {
+    font-size: 16px;
+  }
+  
+  .back-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  
+  .balance-summary {
+    padding: 10px 12px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .top-balance-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  
+  .lena-balance {
+    text-align: left;
+    font-size: 14px;
+    padding-right: 5px;
+  }
+  
+  .dena-balance {
+    text-align: right;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+  
+  .bottom-balance-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .total-balance {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .ledger-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .header-cell,
+  .cell {
+    padding: 6px 3px !important;
+    font-size: 0.65rem !important;
+  }
+
+  /* Further adjust column widths for very small screens */
+  .date, .cell.date {
+    width: 14% !important;
+  }
+
+  .collection, .cell.collection {
+    width: 14% !important;
+  }
+
+  .event, .cell.event {
+    width: 16% !important;
+  }
+
+  .debit, .credit, .balance,
+  .cell.debit, .cell.credit, .cell.balance {
+    width: 11% !important;
+  }
+
+  .payment, .cell.payment {
+    width: 14% !important;
+  }
+
+  .remark, .cell.remark {
+    width: 36% !important;
+  }
+  
+  .no-data-container {
+    padding: 30px 0;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .no-data-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .no-data-text {
+    font-size: 14px;
+  }
+} 

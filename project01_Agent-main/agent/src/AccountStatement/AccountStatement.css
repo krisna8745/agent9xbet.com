@@ -1,0 +1,343 @@
+/* AccountStatement Component Styles - Scoped to .container */
+.container {
+    padding: 15px;
+    background: #f5f7fa;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .container .page-title {
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .container .filter-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .container .filter-form input,
+  .container .filter-form select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+    min-width: 150px;
+    box-sizing: border-box;
+  }
+  
+  .container .table-wrapper {
+    overflow-x: auto;
+    background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #868686;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .container table {
+    width: auto;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: auto;
+    border: 1px solid #868686;
+  }
+  
+  .container th,
+  .container td {
+    padding: 3px 8px;
+    border: 1px solid #868686;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.1;
+    margin: 0;
+    white-space: nowrap !important;
+    height: auto;
+    word-wrap: normal !important;
+    word-break: keep-all !important;
+  }
+  
+  /* Remove text-overflow ellipsis from all cells except if needed */
+  .container td {
+    overflow: visible;
+  }
+  
+  /* Remark column - ensure single line, no wrapping */
+  .container th:last-child,
+  .container td:last-child {
+    white-space: nowrap !important;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: keep-all !important;
+    word-wrap: normal !important;
+    max-width: none !important;
+    min-width: fit-content;
+  }
+  
+  /* Ensure all cells don't wrap */
+  .container tbody td {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    word-wrap: normal !important;
+  }
+  
+  /* Sr No column - auto width based on content */
+  .container th:first-child,
+  .container td:first-child {
+    width: auto;
+    min-width: auto;
+    max-width: none;
+    padding: 3px 6px;
+  }
+  
+  .container th {
+    background: #4a90e2;
+    color: #fff;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 4px 8px;
+    line-height: 1.1;
+  }
+  
+  /* Alternating row colors */
+  .container tbody tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  .container tbody tr:nth-child(odd) {
+    background: #fff;
+  }
+  
+  .container .opening-row {
+    background: #fff;
+    font-weight: 500;
+  }
+  
+  .container .opening-row td {
+    padding: 3px 8px;
+    line-height: 1.1;
+  }
+  
+  .container .credit {
+    color: #28a745;
+    font-weight: 500;
+  }
+  
+  .container .debit {
+    color: #dc3545;
+    font-weight: 500;
+  }
+  
+  .container .no-data {
+    padding: 15px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .container .pagination {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .container .pagination button {
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 3px;
+    font-size: 13px;
+    transition: background-color 0.2s;
+  }
+  
+  .container .pagination button:hover:not(:disabled) {
+    background: #f0f0f0;
+  }
+  
+  .container .pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .container .pagination span {
+    font-size: 13px;
+    padding: 0 8px;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 12px 8px;
+    }
+    
+    .container .page-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .container .filter-form {
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .container .filter-form input,
+    .container .filter-form select {
+      width: 100%;
+      min-width: 100%;
+      padding: 10px;
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .container .table-wrapper {
+      border-radius: 4px;
+      margin: 0 -8px;
+      width: calc(100% + 16px);
+    }
+    
+    .container table {
+      width: auto;
+      table-layout: auto;
+    }
+    
+    .container th,
+    .container td {
+      padding: 3px 6px;
+      font-size: 12px;
+      line-height: 1.1;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      word-wrap: normal !important;
+    }
+    
+    .container td {
+      overflow: visible;
+    }
+    
+    /* Remark column on mobile - single line */
+    .container th:last-child,
+    .container td:last-child {
+      white-space: nowrap !important;
+      overflow: visible;
+      word-break: keep-all !important;
+      word-wrap: normal !important;
+      max-width: none !important;
+    }
+    
+    /* Sr No column - auto width on mobile */
+    .container th:first-child,
+    .container td:first-child {
+      width: auto;
+      min-width: auto;
+      max-width: none;
+      padding: 3px 5px;
+    }
+    
+    .container th {
+      padding: 3px 6px;
+    }
+    
+    .container .pagination {
+      gap: 6px;
+      margin-top: 10px;
+    }
+    
+    .container .pagination button {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+    
+    .container .pagination span {
+      font-size: 12px;
+      padding: 0 6px;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media screen and (max-width: 480px) {
+    .container {
+      padding: 10px 5px;
+    }
+    
+    .container .page-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    
+    .container th,
+    .container td {
+      padding: 2px 5px;
+      font-size: 11px;
+      line-height: 1.1;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      word-wrap: normal !important;
+    }
+    
+    .container td {
+      overflow: visible;
+    }
+    
+    /* Remark column on small mobile - single line */
+    .container th:last-child,
+    .container td:last-child {
+      white-space: nowrap !important;
+      overflow: visible;
+      word-break: keep-all !important;
+      word-wrap: normal !important;
+      max-width: none !important;
+    }
+    
+    .container th:first-child,
+    .container td:first-child {
+      width: auto;
+      min-width: auto;
+      max-width: none;
+      padding: 2px 4px;
+    }
+    
+    .container th {
+      padding: 3px 5px;
+    }
+    
+    .container .pagination button {
+      padding: 5px 8px;
+      font-size: 11px;
+    }
+    
+    .container .pagination span {
+      font-size: 11px;
+      padding: 0 5px;
+    }
+  }
+  
+  /* Tablet Styles */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      padding: 15px;
+    }
+    
+    .container .filter-form {
+      gap: 10px;
+    }
+    
+    .container .filter-form input,
+    .container .filter-form select {
+      flex: 1;
+      min-width: 180px;
+    }
+  }
+  

@@ -1,0 +1,142 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f4;
+  font-family: Arial, sans-serif;
+}
+
+.login-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login-header h2 {
+  color: #333;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.login-form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+.input-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-text {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon-lock {
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+input::placeholder {
+  color: #bbb;
+}
+
+.password-input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+}
+
+.eye-icon-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.eye-icon-button:hover {
+  opacity: 0.7;
+}
+
+.eye-icon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #ff3838;
+} 

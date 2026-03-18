@@ -1,0 +1,215 @@
+/* ClientLedger.css */
+.client-ledger {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#1f2a40;
+    color: white;
+    padding: 10px 15px;
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .back-button {
+    background-color: #ff5a5a;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .client-sections {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .client-section {
+    margin-bottom: 2px;
+  }
+  
+  .client-tab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 8px 15px;
+    font-size: 1.1rem;
+    height: 24px;
+  }
+  
+  .client-tab.lena {
+    background-color: #1f2a40;
+    margin-bottom: 5px;
+  }
+  
+  .client-tab.dena {
+    background-color: #e05757;
+    margin-bottom: 5px;
+  }
+  
+  .client-tab.clear {
+    background-color: #4eaaec;
+    margin-bottom: 5px;
+  }
+  
+  .ledger-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  
+  th, td {
+    box-sizing: border-box;
+  }
+  
+  th {
+    background-color: #1f2a40;
+    color: white;
+    padding: 10px 43px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 0.85rem;
+    border: none;
+    height: 24px;
+  }
+  
+  .checkbox-cell {
+    width: 30px;
+  }
+  
+  .checkbox-cell input {
+    margin: 0;
+    height: 16px;
+    width: 16px;
+  }
+  
+  .user-detail-cell {
+    width: 50%;
+  }
+  
+  .balance-cell {
+    width: 40%;
+  }
+  
+  .no-data {
+    text-align: center;
+    color: #aaa;
+    padding: 8px;
+    font-size: 0.85rem;
+    background-color: white;
+    height: 18px;
+  }
+  
+  /* Transaction row styling */
+  tbody tr {
+    height: 30px;
+  }
+  
+  tbody td {
+    padding: 5px 8px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #f0f0f0;
+   
+  }
+  
+  tr.positive .balance-cell {
+    color: #32c766;
+  }
+  
+  tr.negative .balance-cell {
+    color: #e05757;
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 769px) {
+    .header {
+      padding: 15px 30px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .back-button {
+      padding: 8px 20px;
+      font-size: 1rem;
+    }
+  
+    .client-sections {
+      padding: 10px;
+    }
+  
+    .client-section {
+      margin-bottom: 10px;
+    }
+    
+    .client-tab {
+      height: 30px;
+      padding: 8px 15px;
+    }
+    
+    th {
+      padding: 6px 8px;
+      height: 28px;
+    }
+    
+    .no-data {
+      padding: 10px;
+      height: 22px;
+    }
+    
+    tbody tr {
+      height: 36px;
+    }
+    
+    tbody td {
+      padding: 6px 8px;
+      font-size: 0.9rem;
+  
+    }
+  }
+  
+  .client-columns {
+    display: flex;
+    gap: 7px;
+    width: 100%;
+    margin-top: 2px;
+  }
+  
+  .dena-column,
+  .lena-column {
+    width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .client-columns {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+    .dena-column,
+    .lena-column {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .ledger-table {
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+    }
+  } 

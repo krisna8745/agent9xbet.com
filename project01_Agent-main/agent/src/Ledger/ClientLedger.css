@@ -1,0 +1,473 @@
+/* ClientLedger.css */
+.client-ledger {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8cbba0;
+  color: white;
+  padding: 10px 15px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.back-button {
+  background-color: #ff5a5a;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.client-sections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.client-section {
+  margin-bottom: 2px;
+}
+
+.client-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 8px 15px;
+  font-size: 1.1rem;
+  height: 24px;
+}
+
+.client-tab.lena {
+  background-color: #32c766;
+  margin-bottom: 5px;
+}
+
+.client-tab.dena {
+  background-color: #e05757;
+  margin-bottom: 5px;
+}
+
+.client-tab.clear {
+  background-color: #4eaaec;
+  margin-bottom: 5px;
+}
+
+.ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+th, td {
+  box-sizing: border-box;
+}
+
+th {
+  background-color: #8cbba0;
+  color: white;
+  padding: 10px 15px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 0.85rem;
+  border: none;
+  height: 24px;
+  white-space: nowrap;
+}
+
+th:first-child {
+  width: 60%;
+}
+
+th:nth-child(2) {
+  width: 30%;
+}
+
+th:last-child {
+  width: 10%;
+  text-align: center;
+}
+
+.checkbox-cell {
+  width: 30px;
+}
+
+.checkbox-cell input {
+  margin: 0;
+  height: 16px;
+  width: 16px;
+}
+
+.user-detail-cell {
+  width: 50%;
+}
+
+.balance-cell {
+  width: 40%;
+}
+
+.no-data {
+  text-align: center;
+  color: #aaa;
+  padding: 8px;
+  font-size: 0.85rem;
+  background-color: white;
+  height: 18px;
+}
+
+/* Transaction row styling */
+tbody tr {
+  height: 30px;
+}
+
+tbody td {
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f0f0f0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+tbody td:last-child {
+  text-align: center;
+}
+
+tr.positive .balance-cell {
+  color: #32c766;
+}
+
+tr.negative .balance-cell {
+  color: #e05757;
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .header {
+    padding: 15px 30px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .back-button {
+    padding: 8px 20px;
+    font-size: 1rem;
+  }
+
+  .client-sections {
+    padding: 10px;
+  }
+
+  .client-section {
+    margin-bottom: 10px;
+  }
+  
+  .client-tab {
+    height: 30px;
+    padding: 8px 15px;
+  }
+  
+  th {
+    padding: 6px 8px;
+    height: 28px;
+  }
+  
+  .no-data {
+    padding: 10px;
+    height: 22px;
+  }
+  
+  tbody tr {
+    height: 36px;
+  }
+  
+  tbody td {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+
+  }
+}
+
+.client-columns {
+  display: flex;
+  gap: 7px;
+  width: 100%;
+  margin-top: 2px;
+}
+
+.dena-column,
+.lena-column {
+  width: 100%;
+}
+
+.ledger-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ledger-header span:first-child {
+  flex: 0 0 auto;
+}
+
+.ledger-header span:last-child {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+
+  .client-ledger {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    max-width: 99vw !important;
+    overflow-x: hidden !important;
+    position: relative;
+  }
+
+  .header {
+    padding: 10px 12px !important;
+    flex-wrap: wrap;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 1rem !important;
+    margin: 0 !important;
+    flex: 1;
+    min-width: 0;
+    padding-right: 10px;
+  }
+
+  .back-button {
+    padding: 5px 12px !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .client-columns {
+    flex-direction: column;
+    gap: 15px;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 8px 4px !important;
+    margin: 5px 0 0 0 !important;
+    box-sizing: border-box;
+  }
+
+  .dena-column,
+  .lena-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 2px !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    overflow-x: hidden !important;
+    overflow: visible !important;
+  }
+
+  .ledger-header {
+    font-size: 18px !important;
+    padding: 12px 10px !important;
+    margin: 0 0 8px 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .ledger-header span {
+    font-size: 16px !important;
+    white-space: nowrap;
+  }
+
+  .ledger-table {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 0.8rem;
+    display: table !important;
+    table-layout: fixed !important;
+    box-sizing: border-box !important;
+    border-collapse: collapse !important;
+    overflow: visible !important;
+  }
+
+  .ledger-table thead,
+  .ledger-table tbody {
+    width: 100% !important;
+    display: table-header-group;
+  }
+
+  .ledger-table tbody {
+    display: table-row-group;
+  }
+
+  .ledger-table tr {
+    display: table-row !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  th {
+    padding: 12px 10px !important;
+    font-size: 0.8rem !important;
+    height: auto !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+    display: table-cell !important;
+    overflow: visible !important;
+  }
+
+  th:first-child {
+    width: 65% !important;
+    min-width: 65% !important;
+  }
+
+  th:nth-child(2) {
+    width: 25% !important;
+    min-width: 25% !important;
+  }
+
+  th:last-child {
+    width: 10% !important;
+    min-width: 10% !important;
+    text-align: center !important;
+  }
+
+  tbody td {
+    padding: 12px 10px !important;
+    font-size: 0.85rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    box-sizing: border-box !important;
+    display: table-cell !important;
+    white-space: normal !important;
+    overflow: visible !important;
+  }
+
+  tbody td:first-child {
+    width: 65% !important;
+    min-width: 65% !important;
+  }
+
+  tbody td:nth-child(2) {
+    width: 25% !important;
+    min-width: 25% !important;
+  }
+
+  tbody td:last-child {
+    width: 10% !important;
+    min-width: 10% !important;
+    text-align: center !important;
+  }
+
+  tbody tr {
+    height: auto !important;
+    min-height: 40px;
+    display: table-row !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .no-data {
+    padding: 15px 8px !important;
+    font-size: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: table-cell !important;
+  }
+
+  img[alt="money"] {
+    width: 16px !important;
+    height: auto;
+    max-width: 100% !important;
+  }
+
+  /* Ensure spans inside cells don't overflow */
+  tbody td span {
+    display: inline-block;
+    max-width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Ensure table cells show full content */
+  th, tbody td {
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  /* Prevent table from being cut off */
+  .ledger-table thead tr,
+  .ledger-table tbody tr {
+    width: 100% !important;
+    display: table-row !important;
+  }
+
+  .ledger-table thead tr th,
+  .ledger-table tbody tr td {
+    display: table-cell !important;
+    vertical-align: middle !important;
+  }
+
+  /* Ensure user ID and balance are fully visible */
+  tbody td:first-child {
+    padding-left: 10px !important;
+  }
+
+  tbody td:nth-child(2) {
+    padding-right: 10px !important;
+  }
+
+  /* Remove any potential overflow */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  /* Prevent any element from causing overflow */
+  .client-ledger * {
+    max-width: 100% !important;
+  }
+
+  /* Ensure table wrapper doesn't overflow */
+  .lena-column > *,
+  .dena-column > * {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+} 

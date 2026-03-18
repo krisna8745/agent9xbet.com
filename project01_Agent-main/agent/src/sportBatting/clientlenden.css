@@ -1,0 +1,507 @@
+.client-lenden-container {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #9fc0a8;
+  padding: 15px 25px;
+  color: white;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.back-btn {
+  background-color: #f55a5a;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
+  padding: 15px;
+  gap: 20px;
+}
+
+.date-picker {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 4px;
+  position: relative;
+  min-width: 300px;
+}
+
+.date-picker input {
+  border: none;
+  padding: 5px;
+  width: 110px;
+  outline: none;
+}
+
+.separator {
+  margin: 0 10px;
+  color: #666;
+}
+
+.calendar-icon {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  flex-grow: 1;
+}
+
+.dropdown select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #666;
+  pointer-events: none;
+}
+
+.table-container {
+  padding: 0;
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
+.commission-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+}
+
+.commission-table th, .commission-table td {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.commission-table th {
+  text-align: center;
+}
+
+.commission-table thead th {
+  background-color: #9fc0a8;
+  color: white;
+  font-weight: 600;
+}
+
+.name-header {
+  text-align: left;
+  background-color: #9fc0a8;
+  color: white;
+  min-width: 200px;
+  width: 30%;
+  padding-left: 15px;
+  vertical-align: middle;
+}
+
+.mila-header, .dena-header {
+  background-color: #9fc0a8;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sub-header-row th {
+  background-color: #9fc0a8;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+tbody tr {
+  background-color: #f9f9f9;
+}
+
+/* Add hover effect to change background color of entire row */
+tbody tr:hover {
+  background-color: #e6f2ea;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Styling for the total row */
+.total-row {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  border-top: 2px solid #ddd;
+}
+
+.total-row:hover {
+  background-color: #e0e0e0;
+}
+
+.mila-val {
+  color: #2e8b57;
+  font-weight: bold;
+}
+
+.dena-val {
+  color: #e63946;
+  font-weight: bold;
+}
+
+tbody td:first-child {
+  text-align: left;
+  padding-left: 15px;
+}
+
+.match-name-cell {
+  text-align: left;
+  padding: 12px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+  min-width: 200px;
+  font-weight: 500;
+}
+
+.commission-cell {
+  text-align: center;
+  padding: 12px 15px;
+  min-width: 100px;
+  width: auto;
+}
+
+/* Clickable row styling */
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clickable-row:hover {
+  background-color: #e6f2ea !important;
+}
+
+.total-row {
+  cursor: default;
+}
+
+.total-row:hover {
+  background-color: #f2f2f2 !important;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #9fc0a8;
+  color: white;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.2);
+}
+
+.modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.modal-table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.modal-table thead {
+  background-color: #9fc0a8;
+}
+
+.modal-table th {
+  padding: 12px 15px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.modal-table tbody tr {
+  background-color: #f9f9f9;
+  transition: background-color 0.2s ease;
+}
+
+.modal-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.modal-table tbody tr:hover {
+  background-color: #e6f2ea;
+}
+
+.modal-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.modal-table td:first-child {
+  text-align: left;
+  padding-left: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 15px;
+    flex-wrap: wrap;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .back-btn {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .commission-table {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .commission-table th,
+  .commission-table td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .name-header {
+    min-width: 150px;
+    width: 25%;
+    padding-left: 10px;
+  }
+
+  .match-name-cell {
+    max-width: 200px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .commission-cell {
+    min-width: 80px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .mila-header {
+    font-size: 14px;
+  }
+
+  .sub-header {
+    font-size: 12px;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    max-height: 95vh;
+    border-radius: 8px;
+  }
+
+  .modal-header {
+    padding: 15px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-close-btn {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-body {
+    padding: 15px;
+    overflow-y: auto;
+  }
+
+  .modal-table-container {
+    overflow-x: auto;
+  }
+
+  .modal-table th,
+  .modal-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .modal-table th {
+    font-size: 14px;
+  }
+
+  .modal-table td:first-child {
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 16px;
+  }
+
+  .commission-table {
+    font-size: 12px;
+  }
+
+  .commission-table th,
+  .commission-table td {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .name-header {
+    min-width: 120px;
+    width: 20%;
+    padding-left: 8px;
+  }
+
+  .match-name-cell {
+    max-width: 150px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .commission-cell {
+    min-width: 70px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .mila-header {
+    font-size: 12px;
+  }
+
+  .sub-header {
+    font-size: 11px;
+  }
+
+  .modal-header h2 {
+    font-size: 18px;
+  }
+
+  .modal-body {
+    padding:0px;
+  }
+
+  .modal-table th,
+  .modal-table td {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .modal-table th {
+    font-size: 12px;
+  }
+
+  .modal-table td:first-child {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+} 

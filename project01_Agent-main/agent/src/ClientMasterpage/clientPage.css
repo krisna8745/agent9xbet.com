@@ -1,0 +1,487 @@
+.client-page {
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8ab3a8;
+  color: white;
+  padding: 10px 30px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.back-btn {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin: 10px 0;
+}
+
+.create-btn, .update-btn {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  position: relative;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.client-table th {
+  background-color: #8ab3a8;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #5f9988;
+  cursor: default;
+  position: relative;
+}
+
+/* Add borders to table cells */
+.client-table td {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+ 
+}
+
+.client-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.client-table th.num {
+  width: 30px;
+}
+
+.client-table th.code, 
+.client-table th.name,
+.client-table th.contact {
+  cursor: pointer;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+}
+
+.client-table th.client-comm {
+  text-align: center;
+}
+
+.sub-headers {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5px;
+}
+
+.sub-headers span {
+  flex: 1;
+  text-align: center;
+}
+
+.no-data {
+  height: 200px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.icon {
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+
+.empty-state p {
+  color: #aaa;
+  font-size: 16px;
+}
+
+/* Search styles */
+.search-popup {
+  position: fixed;
+  z-index: 100;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+}
+
+.search-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.search-btn, .reset-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-btn {
+  background-color: #ff5252;
+  color: white;
+}
+
+.reset-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Dropdown styles */
+.client-table th.action-col {
+  width: 50px;
+  padding: 8px;
+  text-align: center;
+}
+
+.action-cell {
+  padding: 4px;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.dropdown-btn {
+  background-color: #8ab3a8;
+  border: none;
+  padding: 0px 1px;
+  border-radius: 4px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.dropdown-btn:hover {
+  background-color: #6a9a8f;
+}
+
+.dropdown-btn svg {
+  display: block;
+}
+
+.dropdown-menu {
+  position: fixed;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  z-index: 10000;
+  padding: 4px 0;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-item svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-item:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.dropdown-item:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Eye button styles */
+.eye-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.eye-btn:hover {
+  transform: scale(1.1);
+}
+
+.eye-btn:active {
+  transform: scale(0.95);
+}
+
+/* Bets Modal Styles */
+.bets-modal {
+  background: #fff;
+  border-radius: 8px;
+  max-width: 95%;
+  max-height: 90vh;
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .bets-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 95vh;
+    border-radius: 0;
+  }
+  
+  .bets-modal table {
+    font-size: 12px;
+  }
+  
+  .bets-modal th,
+  .bets-modal td {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bets-modal {
+    max-height: 100vh;
+  }
+  
+  .bets-modal table {
+    font-size: 11px;
+    min-width: 600px;
+  }
+  
+  .bets-modal th,
+  .bets-modal td {
+    padding: 5px 3px;
+    font-size: 10px;
+  }
+}
+
+/* Mobile Responsive Layout */
+@media (max-width: 768px) {
+  .client-page {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .header {
+    padding: 10px 15px;
+  }
+  
+  .header h1 {
+    font-size: 18px;
+  }
+  
+  .back-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .actions {
+    padding: 10px 15px;
+    margin: 5px 0;
+    gap: 10px;
+  }
+  
+  .create-btn, .update-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+    padding: 0 10px 10px 10px;
+    width: 100%;
+  }
+  
+  .client-table {
+    min-width: 1200px;
+    width: max-content;
+    font-size: 11px;
+    table-layout: auto;
+    border-collapse: collapse;
+  }
+  
+  .client-table th {
+    padding: 10px 8px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    word-wrap: normal !important;
+    min-width: 70px;
+    max-width: none;
+    height: auto;
+    vertical-align: middle !important;
+    line-height: 1.4;
+    text-align: center;
+  }
+  
+  .client-table td {
+    padding: 8px 8px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    word-wrap: normal !important;
+    height: auto;
+    vertical-align: middle !important;
+    line-height: 1.4;
+  }
+  
+  .client-table th.action-col {
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    padding: 10px 5px !important;
+    text-align: center;
+  }
+  
+  .client-table th.code,
+  .client-table th.name,
+  .client-table th.contact,
+  .client-table th.agent {
+    min-width: 90px;
+  }
+  
+  .client-table th.doj,
+  .client-table th.pwd,
+  .client-table th.exposure,
+  .client-table th.chips,
+  .client-table th.status {
+    min-width: 80px;
+  }
+  
+  .client-table th.client-comm {
+    min-width: 200px;
+  }
+  
+  .dropdown-btn {
+    padding: 4px 6px;
+    min-width: auto;
+  }
+  
+  .search-icon {
+    display: inline-block;
+    margin-left: 4px;
+  }
+  
+  .search-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .sub-headers {
+    font-size: 10px;
+    white-space: nowrap !important;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+  }
+  
+  .sub-headers span {
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .client-table thead tr {
+    height: auto;
+  }
+  
+  .client-table tbody tr {
+    height: auto;
+  }
+  
+  .action-cell {
+    padding: 4px !important;
+    text-align: center;
+  }
+  
+  .dropdown-wrapper {
+    display: inline-block;
+  }
+} 
